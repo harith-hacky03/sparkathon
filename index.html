@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeerJS Remote Control with Scrolling</title>
+    <style>
+        /* Basic styling to ensure content is long enough for scrolling */
+        .content {
+            height: 2000px;
+            width: 100%;
+            background: linear-gradient(to bottom, #f06, white);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            color: white;
+            padding: 10px;
+            z-index: 1000;
+        }
+        .box {
+            margin: 1000px auto;
+            width: 300px;
+            height: 100px;
+            background: blue;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>PeerJS Remote Control with Scrolling</h1>
+        <input type="text" id="peer-id" placeholder="Enter Peer ID">
+        <button id="connect">Connect</button>
+        <p>Your Peer ID: <span id="my-peer-id"></span></p>
+        <pre id="log"></pre>
+    </div>
+
+    <div class="content">
+        <h2>Scrollable Content</h2>
+        <p>Scroll down to test synchronization between two devices.</p>
+        <div class="box">Mid-point Box</div>
+        <p>Keep scrolling...</p>
+        <div class="box">End-point Box</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="webrtc.js"></script>
+</body>
+</html>
